@@ -115,8 +115,9 @@ def mapTraversal(player, move=''):
 
     if player.current_room.id not in visited:
         visited[player.current_room.id] = {}
-        for exit in player.current_room.get_exits():
-            visited[player.current_room.id][exit] = '?'
+        for room_exit in player.current_room.get_exits():
+            visited[player.current_room.id][room_exit] = '?'
+            print(f"Player {player.current_room.id} {room_exit}")
 
     if move is not '':
         opposite = opposite_directions[move]
